@@ -12,12 +12,11 @@ const RequireAuth = ({ children }) => {
     if (loading) {
         return <Loading></Loading>
     }
-
     if (!user) {
         return <Navigate to="/login" state={{ from: location }} replace />;
     }
 
-    if (!user.emailVerified) {
+    if (user.providerData[0]?.providerId === "google.com" && !user.emailVerified) {
         return <div className='text-center mt-5'>
             <h3 className='text-danger'>Your Email is not verified!!</h3>
             <h5 className='text-success'> Please Verify your email address</h5>

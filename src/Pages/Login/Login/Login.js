@@ -14,7 +14,6 @@ const Login = () => {
     const passwordRef = useRef('');
     const navigate = useNavigate();
     const location = useLocation();
-
     let from = location.state?.from?.pathname || "/";
     let errorElement;
     const [
@@ -29,11 +28,9 @@ const Login = () => {
     if (loading || sending) {
         return <Loading></Loading>
     }
-
     if (user) {
         navigate(from, { replace: true });
     }
-
     if (error) {
         errorElement = <p className='text-danger'>Error: {error?.message}</p>
     }
@@ -45,11 +42,9 @@ const Login = () => {
 
         signInWithEmailAndPassword(email, password);
     }
-
     const navigateRegister = event => {
         navigate('/register');
     }
-
     const resetPassword = async () => {
         const email = emailRef.current.value;
         if (email) {
@@ -84,5 +79,4 @@ const Login = () => {
         </div>
     );
 };
-
 export default Login;

@@ -1,0 +1,23 @@
+.input_form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.input_form input,
+textarea {
+    width: 50%;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: serif;
+    text-transform: capitalize;
+}
+
+.input_form label {
+    font-size: 18px;
+    font-weight: 600;
+    font-family: serif;
+    text-transform: capitalize;
+}
